@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h3>Test that a web platform's import feature works. Take a screenshot when complete.</h3>
+    <form action="{{ amazon_host }}" method="POST">
+      <h6>Task</h6>
+      <ol>
+        <li>Visit <a href="https://pantheon.io/">pantheon.io</a></li>
+        <li>Click "Create Free Account" and complete the registration form.</li>
+        <li>You will be taken to your newly created account. Click "Create your first site."</li>
+        <li>Name your new site and click "Create Site" to continue.</li>
+        <li>Select "Archive Importer" at the top.</li>
+        <li>In the upload box, paste "https://pantheon-infrastructure.s3.amazonaws.com/testing/canary2.tgz"</li>
+        <li>Click "Import Site" to begin process. Wait until you get an error or are taken to a Dashboard.</li>
+        <li>You will either see an error message or a button that says "Visit your Pantheon Dashboard." Take a screenshot of either the Dashboard or the error message.</li>
+      </ol>
+        <small>You can use a screengrab tool such as
+          <a href="https://www.techsmith.com/jing.html">jing</a>,
+          <a href="https://evernote.com/skitch/?var=1">skitch</a>, or
+          <a href="https://chrome.google.com/webstore/detail/nimbus-screenshot-and-scr/bpconcjcammlapcogcnnelfmaeghhagj?hl=en">Nimbus</a>.
+        </small>
+      <h6>Results</h6>
+      <p>Were you taken to a Dashboard screen without error?</p>
+      <input type="radio" name="user-input" value="success">yes<br>
+      <input type="radio" name="user-input" value="failure">no
+      <p>Please upload the link to your screenshot:</p>
+      <textarea rows="1" cols="100" name="user-input">
+      </textarea>
+      <input type="hidden" id="assignmentId" value="{{ assignment_id }}" name="assignmentId"/>
+      <br/>
+      <input type="hidden" id="workerId" value="{{ worker_id }}" name="workerId"/>
+      <input type="hidden" id="hitId" value="{{ hit_id }}" name="hitId"/>
+      <input type="submit">
+    </form>
+    </body>
+
+  </html>

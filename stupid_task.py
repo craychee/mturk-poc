@@ -17,19 +17,19 @@ connection = MTurkConnection(aws_access_key_id=AWS_ACCESS_KEY_ID,
     host=HOST)
 
 url = "https://mturk-poc.herokuapp.com/"
-title = "Test a web site's upload feature [about 10 minutes]."
-description = "Test that a web platform's import feature works. Take a screenshot when complete."
-keywords = ["QA, screenshot"]
+title = "Describe this group of people in your own words"
+description = "Describe your first impressions of this group of people however you want."
+keywords = ["easy"]
 frame_height = 800
-amount = 1.05
+amount = 0.05
 
 questionform = ExternalQuestion(url, frame_height)
 
 all_hits = [hit for hit in connection.get_all_hits()]
 
-#if all_hits:
-#  for hit in all_hits:
-#    connection.disable_hit(hit.HITId)
+if all_hits:
+  for hit in all_hits:
+    connection.disable_hit(hit.HITId)
 
 create_hit_result = connection.create_hit(
   title=title,
